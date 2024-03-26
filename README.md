@@ -2,6 +2,35 @@
 
 This project aims to generate realistic images from sketches using Conditional Generative Adversarial Networks (cGAN). The cGAN architecture consists of a Generator and a Discriminator network that work together to produce high-quality images.
 
+
+#Sketches to image generation using GANs
+
+### Steps:
+
+**1.Data Collection**
+
+http://mmlab.ie.cuhk.edu.hk/archive/facesketch.html
+
+**2.Defining Paths**
+
+**3.Data Preprocessing**
+
+**4.Defining 3 key Models:**
+
+  Generator
+
+  Discriminator
+
+  Combined
+
+**5.Setting up losses and optimizers**
+
+**6.Training the model**
+
+**7.Testing the trained model**
+
+
+
 ## Generator
 
 ### Input Layer
