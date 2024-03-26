@@ -122,6 +122,12 @@ Overall, this code represents a basic GAN training loop for image generation tas
 
 Contributions are welcome! Please feel free to submit a pull request with any improvements or additional features.
 
+
+## References
+https://www.researchgate.net/publication/362481944_Sketch_to_Image_Using_Generative_Adversarial_Networks_GAN
+https://www.researchgate.net/publication/268079622_Conditional_Generative_Adversarial_Nets
+https://www.researchgate.net/publication/358617446_Sketch_to_image_generation_using_generative_adversarial_network
+
 ## License
 
 This project is licensed under the MIT License 
