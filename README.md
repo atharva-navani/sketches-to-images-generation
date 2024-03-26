@@ -1,5 +1,3 @@
-# sketches-to-images-generation
-
 # Sketches to Image Generation using Conditional Generative Adversarial Networks (cGAN)
 
 This project aims to generate realistic images from sketches using Conditional Generative Adversarial Networks (cGAN). The cGAN architecture consists of a Generator and a Discriminator network that work together to produce high-quality images.
@@ -44,26 +42,45 @@ This project aims to generate realistic images from sketches using Conditional G
 ### Output Level
 - Passed through a dense layer with a neuron and a sigmoid activation function to output the probability that the input image is real.
 
-## Combined Model
+## Training Strategies
 
-### Input Layer
-- Input images of size (64, 64, 3) fed into the Generator.
+- **Learning Rate Decay**: Learning rate decay is applied to adjust the learning rate as training progresses, which can help convergence.
+- **Adversarial Training**: Discriminator and generator are alternately trained to compete against each other, aiming for improved performance.
 
-### Generator
-- Produces generated images from input sketches.
+## Training Loop
 
-### Resampling
-- Generated images are upsampled using UpSampling2D to match the dimensions expected by the Discriminator.
+The code iterates over epochs, adjusting the learning rate based on epoch number.
 
-### Freeze Discriminator Weights
-- Discriminator weights are frozen to only update the Generator weights during training.
+Within each epoch, it iterates over batches of data.
 
-### Discriminator
-- Predicts whether generated images are real or fake.
+For each batch:
 
-### Outputs
-- Generated images from the Generator.
-- Predictions from the Discriminator about the generated images.
+- It selects a batch of sketches (X) and their corresponding real photos (Y).
+- The generator model generates fake photos (fake_photos) from the sketches.
+- The fake photos are resized to match the size of real photos.
+- Labels (discriminator_Y) are created for the discriminator, where real photos are labeled as 1 and fake photos as 0.
+- Discriminator inputs (discriminator_X) are created by concatenating real and fake photos.
+- The discriminator inputs are rescaled to the range [-1, 1].
+- The discriminator is trained on this batch using `train_on_batch`.
+- The generator is then trained using the sketches and the expected real photos, and it aims to fool the discriminator by generating photos that the discriminator will classify as real.
+- Epoch and losses (generator loss and discriminator loss) are printed.
+
+## Model Training
+
+- The generator and discriminator models are trained alternately in each batch.
+- The discriminator is trained to distinguish between real and fake images.
+- The generator is trained to generate images that are indistinguishable from real images by the discriminator.
+
+## Output
+
+For each epoch, the batch number and corresponding generator loss and discriminator loss are printed.
+
+Overall, this code represents a basic GAN training loop for image generation tasks, with specific emphasis on generating realistic photos from sketches.
+
+## Dependencies
+
+- `numpy`: NumPy is a library for numerical computations in Python.
+- `cv2`: OpenCV is a library mainly aimed at real-time computer vision.
 
 ## Getting Started
 
@@ -78,7 +95,7 @@ Contributions are welcome! Please feel free to submit a pull request with any im
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License 
 
 ## Acknowledgments
 
