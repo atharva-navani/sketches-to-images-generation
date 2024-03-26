@@ -133,7 +133,31 @@ Overall, this code represents a basic GAN training loop for image generation tas
 
 Contributions are welcome! Please feel free to submit a pull request with any improvements or additional features.
 
+## Limitations:
 
+1. **Limited Dataset**: The performance of the model may be limited by the availability and diversity of the dataset used for training. A larger and more diverse dataset could potentially improve the quality of generated photos.
+
+2. **GPU Computation Power**: The computational demands of training deep learning models, especially GANs, can be substantial. Limited GPU computational power may result in longer training times or may even restrict the size and complexity of the model that can be trained effectively.
+
+3. **Hardware Incompetency**: Inadequate hardware infrastructure, including CPU, GPU, and memory resources, may constrain the scalability and efficiency of training the model.
+
+4. **Artistic Interpretation**: While the model aims to generate realistic photos from sketches, it may lack the artistic intuition and context understanding that human artists possess. Thus, generated photos may not always perfectly reflect the intended interpretation of the sketches.
+
+### Additional Considerations:
+
+5. **Subjective Quality Evaluation**: Evaluating the quality of generated photos is inherently subjective and may vary depending on individual preferences and perspectives. Objective metrics may not always capture the nuanced aspects of image quality.
+
+## Future Scope:
+
+1. **Police Sketches for Recognizing Suspects**: The model could be extended for generating realistic images from police sketches, aiding law enforcement agencies in identifying and apprehending suspects more effectively.
+
+2. **Tracking Cybercriminals**: By generating realistic images from digital sketches or descriptions of cybercriminals, the model could assist in tracking and apprehending individuals involved in cybercrimes, such as hacking or online fraud.
+
+3. **Artistic Collaboration**: Beyond practical applications, the model could facilitate artistic collaboration by generating photorealistic images from conceptual sketches, enabling artists to visualize their ideas more vividly and efficiently.
+
+4. **Fashion and Design Industry**: In the fashion and design industry, the model could be utilized to quickly prototype and visualize design concepts, accelerating the creative process and reducing the time-to-market for new products.
+
+5. **Medical Imaging**: Extending the model to generate realistic medical images from diagnostic sketches or descriptions could aid medical professionals in visualizing patient conditions and treatment plans more intuitively.
 ## References
 https://www.researchgate.net/publication/362481944_Sketch_to_Image_Using_Generative_Adversarial_Networks_GAN
 https://www.researchgate.net/publication/268079622_Conditional_Generative_Adversarial_Nets
