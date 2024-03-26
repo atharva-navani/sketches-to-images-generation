@@ -5,6 +5,14 @@ This project aims to generate realistic images from sketches using Conditional G
 
 #Sketches to image generation using GANs
 
+## OUTPUT
+
+<img width="1126" alt="Screenshot 2024-03-23 at 12 16 45 PM" src="https://github.com/atharva-navani/sketches-to-images-generation/assets/164495332/89e76923-7ca7-4dc2-9874-30fbc71fd005">
+
+![Original-3](https://github.com/atharva-navani/sketches-to-images-generation/assets/164495332/3f6f27f5-4acb-4eb0-92fb-3a6735859aed)
+
+
+
 ### Steps:
 
 **1.Data Collection**
