@@ -1,0 +1,73 @@
+# Sketch to Image Generation using cGANs
+
+## Overview
+
+This project aims to generate realistic images from sketches using conditional Generative Adversarial Networks (cGANs). Two different generator architectures are implemented: one using a Convolutional Neural Network (CNN) and another using the ResNet-18 architecture. The discriminator is built using a CNN. Adam optimizer is used with binary cross-entropy loss for training both the generator and discriminator models.
+
+## Dataset
+
+The dataset consists of pairs of sketches and corresponding photos. It is divided into train and test sets, each containing sketches and photos.
+
+## Data Processing
+
+- Images are loaded and resized to a uniform size of 128x128 pixels.
+- Pixel values are normalized to the range [-1, 1].
+
+## Model Architectures
+
+### Generator Models
+
+1. **CNN-based Generator**:
+   - Input: Sketch image.
+   - Output: Generated photo.
+
+2. **ResNet-18-based Generator**:
+   - Input: Sketch image.
+   - Output: Generated photo.
+
+### Discriminator Model
+
+- CNN-based discriminator trained to distinguish between real and generated images.
+
+# Training Loop
+
+The training loop of the conditional Generative Adversarial Network (cGAN) for image generation encompasses a detailed process aimed at effectively training and evaluating the model. This section orchestrates the core training mechanism, leveraging iterative epochs and batch-wise data processing to refine the model's performance.
+
+1. **Epoch Iteration**:
+
+The loop iterates over a predefined number of epochs (`EPOCHS`). Each epoch represents a full pass through the entire dataset, enabling the model to learn from the available samples.
+
+2. **Learning Rate Adjustment**:
+
+Within each epoch, the learning rate dynamically adjusts to promote convergence. This adaptive learning rate strategy helps optimize the training process by modulating the rate at which model parameters are updated.
+
+3. **Batch Iteration**:
+
+Nested within the epoch loop is a batch-wise iteration mechanism. Batches of data are sequentially processed, ensuring efficient utilization of computational resources and enabling stochastic gradient descent-based optimization.
+
+4. **Training Discriminator**:
+
+During each batch iteration, the discriminator model undergoes training on a combination of real and fake images. This training process involves optimizing the discriminator's ability to differentiate between genuine and generated images.
+
+5. **Training Generator**:
+
+Simultaneously, the generator model is trained on sketches to produce fake images that resemble the target distribution. By optimizing the generator's parameters, the model learns to generate visually coherent and realistic images.
+
+6. **Accuracy Evaluation**:
+
+After completing training for each epoch, the accuracy of both the generator and discriminator models is evaluated. This evaluation is essential for monitoring model performance and assessing its ability to generate high-quality images consistent with the input conditions.
+
+7. **Accuracies Storage**:
+
+The computed accuracies for both the generator and discriminator models are stored in separate lists (`generator_accuracies` and `discriminator_accuracies`). These lists serve as valuable metrics for tracking the training progress and evaluating the model's performance over successive epochs.
+
+8. **Visualization**:
+
+To provide insights into the training progress, the script incorporates visualization techniques using matplotlib. Through plotted graphs, the accuracies of the generator and discriminator models are depicted over epochs, offering a comprehensive overview of the training dynamics.
+
+This meticulous training loop ensures the systematic optimization of the cGAN model, ultimately facilitating the generation of high-quality images that closely adhere to the specified input conditions.
+
+
+## Results
+
+After training for 500 epochs, the models are capable of generating realistic images from sketches. Sample images generated using both CNN-based and ResNet-18-based generators are provided in the results directory.
